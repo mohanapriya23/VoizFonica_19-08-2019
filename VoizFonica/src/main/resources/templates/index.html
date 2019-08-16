@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8">
+    <title>VoizFonica</title>
+
+    <!-- Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Font Awesome -->
+    <script defer src="//use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Bootstrap Scripts -->
+    <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body>
+
+<section class="colored-section" id="title">
+
+    <div class="container-fluid">
+
+        <!-- Nav Bar -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <a class="navbar-brand" href="">VoizFonica</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prepaid"> Prepaid </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#postpaid"> Postpaid </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dongle"> Dongle </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#purchase">Purchase</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutus"> Why us? </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="login"> Login </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+
+        <!-- Title -->
+
+        <div class="row">
+
+            <div class="col-lg-6">
+                <h1 class="big-heading">Experience 4G</h1>
+                <a href="login" class="btn btn-light btn-lg download-button" type="button">Login</a>
+                <a href="register" class="btn btn-light btn-lg download-button" type="button">Register</a>
+
+            </div>
+
+            <div class="col-lg-6">
+                <img class="title-image" src="images/4g.png" alt="Sim-card">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Features -->
+
+<section class="white-section" id="features">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="feature-box col-lg-4">
+                <i class="icon fas fa-check-circle fa-4x"style="color:rgba(100,178,77,0.8);"></i>
+                <h3 class="feature-title"style="color:rgba(100,178,77,1);"> Fastest 4G Speeds</h3>
+            </div>
+
+            <div class="feature-box col-lg-4">
+                <i class="icon fas fa-bullseye fa-4x"style="color:rgba(100,178,77,0.8);"></i>
+                <h3 class="feature-title"style="color:rgba(100,178,77,1);">Maximum Coverage</h3>
+            </div>
+
+            <div class="feature-box col-lg-4">
+                <i class="icon fas fa-money-bill-alt fa-4x"style="color:rgba(100,178,77,0.8);"></i>
+                <h3 class="feature-title"style="color:rgba(100,178,77,1);">Lowest Prices</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Testimonials -->
+
+<section class="colored-section" id="testimonials">
+
+    <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active container-fluid">
+                <h2 class="testimonial-text">I have used many carriers all across the world, but this is the fastest one hands down!!!</h2>
+                <img class="testimonial-image" src="images/cust1-img.jpg" alt="cust1-profile">
+                <em>Nathan, New York</em>
+            </div>
+            <div class="carousel-item container-fluid">
+                <h2 class="testimonial-text">I never thought that the cheapest options would be the fastest options</h2>
+                <img class="testimonial-image" src="images/lady-img.jpg" alt="cust2-profile">
+                <em>Carol, California</em>
+            </div>
+            <div class="carousel-item container-fluid">
+                <h2 class="testimonial-text"> I never experienced a drop in call quality over my usage period of nearly one year!!</h2>
+                <img class="testimonial-image" src="images/cust3-img.jpg" alt="cust3-profile">
+                <em>Justin, Illinois</em>
+            </div>
+            <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<br>
+<!-- Pricing -->
+
+<section class="white-section" id="prepaid">
+
+    <h2 class="section-heading" style="color: rgba(100,178,77,0.8);">Prepaid Plans</h2>
+
+
+    <div class="row">
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>BASIC</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹399/ 30 Days</h2>
+                    <p>45GB Total Data</p>
+                    <p>100Mbps Speed</p>
+                    <p>Unlimited Calling</p>
+                    <p>30 days Validity</p>
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>STANDARD</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹999/ 180 Days</h2>
+                    <p>50GB Total Data</p>
+                    <p>360Mbps Speed</p>
+                    <p>Unlimited Calling</p>
+                    <p>60 days Validity</p>
+
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3>UNLIMITED</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹1999/ 30 Days</h2>
+                    <p>75GB Total Data</p>
+                    <p>600Mbps Speed</p>
+                    <p>Unlimited Calling</p>
+                    <p>90 days Validity</p>
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<hr style="border: 0.5px double rgba(100,178,77,0.8);" />
+
+<section class="white-section" id="postpaid">
+
+    <h2 class="section-heading" style="color: rgba(100,178,77,0.8);">Postpaid Plans</h2>
+
+
+    <div class="row">
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>STARTER PACK</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹399/ 30 Days</h2>
+                    <p>45GB Total Data</p>
+                    <p>100Mbps Speed</p>
+                    <p>Unlimited Calling</p>
+                    <p>30 days Validity</p>
+
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>BEST VALUE</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹999/ 30 Days</h2>
+                    <p>50GB Total Data</p>
+                    <p>360Mbps Speed</p>
+                    <p>Unlimited Calling</p>
+                    <p>60 days Validity</p>
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3>POWER USER</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹1999/ 60 Days</h2>
+                    <p>75GB Total Data</p>
+                    <p>600Mbps Speed</p>
+                    <p>Unlimited Calling</p>
+                    <p>90 days Validity</p>
+
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr style="border: 0.5px double rgba(100,178,77,0.8);" />
+
+<section class="white-section" id="dongle">
+
+    <h2 class="section-heading" style="color: rgba(100,178,77,0.8);">Dongle Plans</h2>
+
+
+    <div class="row">
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>STARTER PACK</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹399/ 30 Days</h2>
+                    <p>45GB Total Data</p>
+                    <p>100Mbps Speed</p>
+                    <p>Unlimited Calling</p>
+                    <p>30 days Validity</p>
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>BEST VALUE</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹999/ 180 Days</h2>
+                    <p>50GB Total Data</p>
+                    <p>360Mbps Speed</p>
+                    <p>Unlimited Calling</p>
+                    <p>60 days Validity</p>
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3>POWER USER</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹1999/ 60 Days</h2>
+                    <p>75GB Total Data</p>
+                    <p>600Mbps Speed</p>
+                    <p>Unlimited Calling</p>
+                    <p>90 days Validity</p>
+
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<hr style="border: 0.5px double rgba(100,178,77,0.8);" />
+
+<section class="white-section" id="purchase">
+
+    <h2 class="section-heading" style="color: rgba(100,178,77,0.8);">Purchase Dongle</h2>
+    <div class="row">
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Dongle 1</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹999</h2>
+                    <img src="images/dongle5.png"  height="50%" width="50%">
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>DONGLE 2</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹1999</h2>
+                    <img src="images/dongle2.png"  height="50%" width="67%">
+
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3>DONGLE 3</h3>
+                </div>
+                <div class="card-body">
+                    <h2 class="price-text">₹2999</h2>
+                    <img src="images/dongle7.png" height="50%" width="50%" >
+
+                    <a href="login" class="btn btn-lg btn-block btn-outline-success" type="button">Sign In</a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Call to Action -->
+
+<section class="colored-section" id="aboutus">
+
+    <div class="container-fluid">
+
+        <h3 class="big-heading" style="color:white;">Why us?</h3>
+        <p align="justify" style="font-family:arial,serif; size: 20px; color:white">
+        <ul class="list-unstyled">
+            <li style="font-family:arial,serif; size: 20px; color:white">20+ years of experience in Telecom Industry</li>
+            <li style="font-family:arial,serif; size: 20px; color:white"> Customer First Policy </li>
+            <li style="font-family:arial,serif; size: 20px; color:white">Over 10 awards recieved in the past 20 years</li>
+            <li style="font-family:arial,serif; size: 20px; color:white">Best network Operator for Customer Satisfaction</li>
+        </ul>
+        </p>
+    </div>
+</section>
+<footer id="myFooter">
+    <div class="container">
+        <div class="social-networks">
+            <a href="https://www.twitter.com" class="twitter"><i class="fab fa-twitter "style="font-size:30px;color:white"></i></a>
+            <a href="https://www.facebook.com" class="facebook"><i class="fab fa-facebook " style="font-size:30px;color:white"></i></a>
+            <a href="https://www.youtube.com" class="google"><i class="fab fa-youtube" style="font-size:30px;color:white"></i></a>
+            <a href="https://www.instagram.com" class="email"><i class="fab fa-instagram"  style="font-size:30px;color:white"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <p class="social-networks">© 2019 Copyright Voizfonica </p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

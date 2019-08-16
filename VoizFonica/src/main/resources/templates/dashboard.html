@@ -1,0 +1,176 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboardcss.css">
+</head>
+<body>
+<!-- Navigation Starts-->
+<aside class="side-nav" id="show-side-navigation1"style=" background-color: white" >
+    <div class="vl">
+        <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
+        <div class="heading"style="background-color: rgb(100,178,77);">
+            <img src="images/user.ico" alt="user pic">
+            <div class="info">
+                <h3 style="color: white">Hi,<a th:href="dashboard" th:text="${register.name}" > User</a></h3>
+                <p style="color:white">Welcome to your account </p>
+            </div>
+        </div>
+        <ul class="categories">
+            <li><i class="fa fa-home fa-fw" style="color:green" aria-hidden="true"></i><a th:href="dashboard"> My account</a>
+            </li>
+            <li><i class="fa fa-money fa-fw"style="color:green"></i><a th:href="payrecharge"> Payment and Recharge</a>
+            </li>
+            <li><i class="fa fa-map fa-fw"style="color:green"></i><a th:href="postpaid"> Plans </a>
+                <ul class="side-nav-dropdown">
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Prepaid Plans</a></li>
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Postpaid Plans</a></li>
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Dongle Plans</a></li>
+                </ul>
+            </li>
+            <li><i class="fa fa-usb fa-fw" style="color:green"></i><a th:href="donglepurchase"> Purchase Dongle</a>
+            </li>
+            <li><i class="fa fa-pencil fa-fw" style="color:green"></i><a th:href="edit"> Edit Profile</a>
+            </li>
+            <li><i class="fa fa-users fa-fw" style="color:green"></i><a th:href="newconnection"> New Connection</a>
+            </li>
+            <li><i class="fa fa-bolt fa-fw" style="color:green"></i><a th:href="index"> Logout</a>
+            </li>
+        </ul>
+    </div>
+</aside>
+<section id="contents">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid"style="background-color:rgb(100,178,77);color:white">
+            <div class="navbar-header ">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <i class="fa fa-align-right"></i>
+                </button>
+                <a class="navbar-brand" th:href="dashboard"style="color:white">My<span class="main-color"style="color:white">Dashboard</span></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="dashboard"><i class="fa fa-user-o fw"></i> My account</a></li>
+                            <li><a href="postpaid"><i class="fa fa-map-o fw"></i> Recommended Plans</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a th:href="index"><i class="fa fa-sign-out"></i> Log out</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i data-show="show-side-navigation1" class="fa fa-bars show-side-btn"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Ends-->
+    <div class="welcome">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content"style="background-color: white;margin-bottom:-80px">
+                        <h1 style="color:rgb(100,178,77);text-align:center">Welcome to your Dashboard</h1>
+                        <p style="color:rgb(100,178,77);text-align:center">Here you can view your current subscription and your statistics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="statistics">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box"style="background-color:white">
+                        <i class="fa fa-balance-scale fa-fw success"></i>
+                        <div class="info">
+                            <h3 style="color: green"th:text=" *{register.order!= null and register.order.postpaidPlans!= null}? *{register.order.postpaidPlans.totalData} : 'Zero'">Zero</h3> <span style="color: green"></span>
+                            <p style="color: green">of data available</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box"style="background-color:white">
+                        <i class="fa fa-calendar fa-fw success"></i>
+                        <div class="info">
+                            <h3 style="color: green"th:text=" *{register.order!= null and register.order.postpaidPlans!= null}? *{register.order.postpaidPlans.validity}: 'Zero days'"></h3> <span style="color: green"></span>
+                            <p style="color: green">Remaining in current plan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="box"style="background-color:white">
+                        <i class="fa fa-unlock   fa-fw success"></i>
+                        <div class="info">
+                            <h3 style="color: green"th:text="*{register.order!= null and register.order.postpaidPlans!= null}? *{register.order.postpaidPlans.planName}: 'Null'">Null </h3> <span style="color: green">plan</span>
+                            <p style="color: green">is your current plan opted</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="charts">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="chart-container"style="background-color:white">
+                        <h3 style="color:green">Talktime</h3>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart-container" style="background-color:white">
+                        <h3 style="color:green"> Data Usage</h3>
+                        <canvas id="myChart2" ></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class='statis text-center'>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box success">
+                        <i class="fa fa-archive"></i>
+                        <h3 th:text="*{register.order!= null and register.order.postpaidPlans!= null}? *{register.order.postpaidPlans.type} : '--'">&#45;&#45;</h3>
+                        <p class="lead">Plan Type</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box success">
+                        <i class="fa fa-bolt"></i>
+                        <h3 th:text=" *{register.order!= null and register.order.postpaidPlans!= null}? *{register.order.postpaidPlans.speed} : '0Mbps'">0Mbps</h3>
+                        <p class="lead">Speed of data</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box success">
+                        <i class="fa fa-hourglass-half"></i>
+                        <h3 th:text=" *{register.order!= null and register.order.postpaidPlans!= null}? *{register.order.postpaidPlans.validity}: '0 days'">0 days</h3>
+                        <p class="lead">Plan Duration</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box success">
+                        <i class="fa fa-download"></i>
+                        <h3 th:text="*{register.order!= null and register.order.postpaidPlans!= null}? *{register.order.postpaidPlans.totalData} : '0 GB'">0 GB</h3>
+                        <p class="lead">Plan Data</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<script src='//code.jquery.com/jquery-latest.js'></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+<script src='css/main.js'></script>
+</body>
+</html>
+
+

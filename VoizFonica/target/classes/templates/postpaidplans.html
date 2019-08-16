@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <title>Plans</title>
+    <meta charset="utf-8">
+
+
+    <link rel="stylesheet" type="text/css" href="css/planscss.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+   <!-- <link href='//fonts.googleapis.com/css?family=Lato:400,300,700,100' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+</head>
+
+<body>
+<!-- Navigation Starts-->
+<aside class="side-nav" id="show-side-navigation1"style=" background-color: white" >
+    <div class="vl">
+        <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
+        <div class="heading"style="background-color: rgb(100,178,77);">
+            <img src="images/user.ico" alt="user pic">
+            <div class="info">
+                <h3 style="color: white">Hi,<a th:href="dashboard" > User</a></h3>
+                <p style="color:white">Welcome to your account </p>
+            </div>
+        </div>
+        <ul class="categories">
+            <li><i class="fa fa-home fa-fw" style="color:green" aria-hidden="true"></i><a th:href="dashboard" > My account</a>
+            </li>
+            <li><i class="fa fa-money fa-fw"style="color:green"></i><a th:href="payrecharge"> Payment and Recharge</a>
+            </li>
+            <li><i class="fa fa-map fa-fw"style="color:green"></i><a th:href="postpaid"> Plans </a>
+               <!-- <ul class="side-nav-dropdown">
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Prepaid Plans</a></li>
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Postpaid Plans</a></li>
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Dongle Plans</a></li>
+                </ul>-->
+            </li>
+            <li><i class="fa fa-usb fa-fw" style="color:green"></i><a th:href="donglepurchase"> Purchase Dongle</a>
+            </li>
+            <li><i class="fa fa-pencil fa-fw" style="color:green"></i><a th:href="edit"> Edit Profile</a>
+            </li>
+            <li><i class="fa fa-users fa-fw" style="color:green"></i><a th:href="newconnection"> New Connection</a>
+            </li>
+            <li><i class="fa fa-bolt fa-fw" style="color:green"></i><a th:href="index"> Logout</a>
+            </li>
+        </ul>
+    </div>
+</aside>
+<section id="contents">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid"style="background-color:rgb(100,178,77);color:white">
+            <div class="navbar-header ">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <i class="fa fa-align-right"></i>
+                </button>
+                <a class="navbar-brand" th:href="dashboard"style="color:white">My<span class="main-color"style="color:white">Dashboard</span></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="dashboard"><i class="fa fa-user-o fw"></i> My account</a></li>
+                            <li><a href="postpaid"><i class="fa fa-map-o fw"></i> Recommended Plans</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a th:href="index"><i class="fa fa-sign-out"></i> Log out</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i data-show="show-side-navigation1" class="fa fa-bars show-side-btn"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Ends-->
+
+<div id="generic_price_table"style="background-color: white">
+    <section>
+        <div class="container-fluid" id="row1">
+            <div class="row" >
+                <div class="col-md-12">
+                    <!--PRICE HEADING START-->
+                    <div class="price-heading clearfix">
+                        <h1 style ="color:rgb(102,179,80)">PREPAID PLANS</h1>
+                    </div>
+                    <!--//PRICE HEADING END-->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" >
+
+            <!--BLOCK ROW START-->
+            <div class="row" >
+                <div class="col-md-4" th:each="property,iterStat: ${plans}" th:if="${iterStat.index}>=0 and ${iterStat.index}<3
+ ">
+
+                    <!--PRICE CONTENT START-->
+                    <div class="generic_content clearfix" style="border:1px solid gray">
+
+                        <!--HEAD PRICE DETAIL START-->
+                        <div class="generic_head_price clearfix">
+
+                            <!--HEAD CONTENT START-->
+                            <div class="generic_head_content clearfix">
+
+                                <!--HEAD START-->
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                    <span th:text ="${property.planName}"></span>
+                                </div>
+                                <!--//HEAD END-->
+
+                            </div>
+                            <!--//HEAD CONTENT END-->
+
+                            <!--PRICE START-->
+                            <div class="generic_price_tag clearfix">
+                                <span class="price">
+                                    <span class="sign" th:text ="${property.currency}"></span>
+                                    <span class="currency" th:text ="${property.amount}" ></span>
+                                    <span class="month" th:text ="${property.valid}"></span>
+                                </span>
+                            </div>
+                            <!--//PRICE END-->
+
+                        </div>
+                        <!--//HEAD PRICE DETAIL END-->
+
+                        <!--FEATURE LIST START-->
+                        <div class="generic_feature_list">
+                            <ul>
+                                <li><span th:text ="${property.totalData}"></span> Total Data</li>
+                                <li><span th:text ="${property.speed}"></span> Speed</li>
+                                <li><span >Unlimited</span> Data</li>
+                                <li><span th:text ="${property.validity}"> Days</span> Validity</li>
+                            </ul>
+                        </div>
+                        <!--//FEATURE LIST END-->
+
+                        <!--BUTTON START-->
+                        <div class="generic_price_btn clearfix">
+                            <a th:href="@{'/postpaid/'+${property.id}}">Buy Now!!!</a>
+                        </div>
+                        <!--//BUTTON END-->
+
+                    </div>
+                    <!--//PRICE CONTENT END-->
+
+                </div>
+
+
+            </div>
+            <!--//BLOCK ROW END-->
+        </div>
+    </section>
+</div>
+
+
+<!--Postpaid Plans-->
+<div id="generic_price_table"style="background-color: white">
+    <section>
+        <div class="container-fluid" id="row2">
+            <div class="row" >
+                <div class="col-md-12">
+                    <!--PRICE HEADING START-->
+                    <div class="price-heading clearfix">
+                        <h1 style ="color:rgb(102,179,80)">POSTPAID PLANS</h1>
+                    </div>
+                    <!--//PRICE HEADING END-->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" >
+
+            <!--BLOCK ROW START-->
+            <div class="row" >
+                <div class="col-md-4" th:each="property,iterStat: ${plans}" th:if="${iterStat.index}>=3 and ${iterStat.index}<6 ">
+
+                    <!--PRICE CONTENT START-->
+                    <div class="generic_content clearfix" style="border:1px solid gray">
+
+                        <!--HEAD PRICE DETAIL START-->
+                        <div class="generic_head_price clearfix">
+
+                            <!--HEAD CONTENT START-->
+                            <div class="generic_head_content clearfix">
+
+                                <!--HEAD START-->
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                    <span th:text ="${property.planName}"></span>
+                                </div>
+                                <!--//HEAD END-->
+
+                            </div>
+                            <!--//HEAD CONTENT END-->
+
+                            <!--PRICE START-->
+                            <div class="generic_price_tag clearfix">
+                                <span class="price">
+                                    <span class="sign" th:text ="${property.currency}"></span>
+                                    <span class="currency" th:text ="${property.amount}" ></span>
+                                    <span class="month" th:text ="${property.valid}"></span>
+                                </span>
+                            </div>
+                            <!--//PRICE END-->
+
+                        </div>
+                        <!--//HEAD PRICE DETAIL END-->
+
+                        <!--FEATURE LIST START-->
+                        <div class="generic_feature_list">
+                            <ul>
+                                <li><span th:text ="${property.totalData}"></span> Total Data</li>
+                                <li><span th:text ="${property.speed}"></span> Speed</li>
+                                <li><span >Unlimited</span> Data</li>
+                                <li><span th:text ="${property.validity}"> Days</span> Validity</li>
+                            </ul>
+                        </div>
+                        <!--//FEATURE LIST END-->
+
+                        <!--BUTTON START-->
+                        <div class="generic_price_btn clearfix">
+                            <a th:href="@{'/postpaid/'+${property.id}}">Buy Now!!!</a>
+                        </div>
+                        <!--//BUTTON END-->
+
+                    </div>
+                    <!--//PRICE CONTENT END-->
+
+                </div>
+
+
+            </div>
+            <!--//BLOCK ROW END-->
+        </div>
+    </section>
+</div>
+
+<!--Dongle Plans  -->
+<div id="generic_price_table"style="background-color: white">
+    <section>
+        <div class="container-fluid" id="row3">
+            <div class="row" >
+                <div class="col-md-12">
+                    <!--PRICE HEADING START-->
+                    <div class="price-heading clearfix">
+                        <h1 style ="color:rgb(102,179,80)">DONGLE PLANS</h1>
+                    </div>
+                    <!--//PRICE HEADING END-->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" >
+
+            <!--BLOCK ROW START-->
+            <div class="row" >
+                <div class="col-md-4" th:each="property,iterStat: ${plans}" th:if="${iterStat.index}>5   ">
+
+                    <!--PRICE CONTENT START-->
+                    <div class="generic_content clearfix" style="border:1px solid gray">
+
+                        <!--HEAD PRICE DETAIL START-->
+                        <div class="generic_head_price clearfix">
+
+                            <!--HEAD CONTENT START-->
+                            <div class="generic_head_content clearfix">
+
+                                <!--HEAD START-->
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                    <span th:text ="${property.planName}"></span>
+                                </div>
+                                <!--//HEAD END-->
+
+                            </div>
+                            <!--//HEAD CONTENT END-->
+
+                            <!--PRICE START-->
+                            <div class="generic_price_tag clearfix">
+                                <span class="price">
+                                    <span class="sign" th:text ="${property.currency}"></span>
+                                    <span class="currency" th:text ="${property.amount}" ></span>
+                                    <span class="month" th:text ="${property.valid}"></span>
+                                </span>
+                            </div>
+                            <!--//PRICE END-->
+
+                        </div>
+                        <!--//HEAD PRICE DETAIL END-->
+
+                        <!--FEATURE LIST START-->
+                        <div class="generic_feature_list">
+                            <ul>
+                                <li><span th:text ="${property.totalData}"></span> Total Data</li>
+                                <li><span th:text ="${property.speed}"></span> Speed</li>
+                                <li><span >Unlimited</span> Data</li>
+                                <li><span th:text ="${property.validity}"> Days</span> Validity</li>
+                            </ul>
+                        </div>
+                        <!--//FEATURE LIST END-->
+
+                        <!--BUTTON START-->
+                        <div class="generic_price_btn clearfix">
+                            <a th:href="@{'/postpaid/'+${property.id}}">Buy Now!!!</a>
+                        </div>
+                        <!--//BUTTON END-->
+
+                    </div>
+                    <!--//PRICE CONTENT END-->
+
+                </div>
+
+
+            </div>
+            <!--//BLOCK ROW END-->
+        </div>
+    </section>
+</div>
+
+
+
+
+
+<br><br>
+</section>
+<!--
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+&lt;!&ndash;<script src="main.js"></script>&ndash;&gt;
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<script src='//code.jquery.com/jquery-latest.js'></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+<script src='css/main.js'></script>
+</body>
+</html>

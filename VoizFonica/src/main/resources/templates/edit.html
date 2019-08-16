@@ -1,0 +1,140 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Edit profile</title>
+    <link href='//fonts.googleapis.com/css?family=Lato:400,300,700,100' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/dashboardedit.css">
+
+    <!--- old--->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
+          id="bootstrap-css" >
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<!------ Side Bar and hearder ---------->
+<body >
+
+<!-- Navigation Starts-->
+<aside class="side-nav" id="show-side-navigation1"style=" background-color: white" >
+    <div class="vl">
+        <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
+        <div class="heading"style="background-color: rgb(100,178,77);">
+            <img src="images/user.ico" alt="user pic">
+            <div class="info">
+                <h3 style="color: white">Hi,<a th:href="dashboard">User</a></h3>
+                <p style="color:white">Welcome to your account </p>
+            </div>
+        </div>
+        <ul class="categories">
+            <li><i class="fa fa-home fa-fw" style="color:green" aria-hidden="true"></i><a th:href="dashboard"> My account</a>
+            </li>
+            <li><i class="fa fa-money fa-fw"style="color:green"></i><a th:href="payrecharge"> Payment and Recharge</a>
+            </li>
+            <li><i class="fa fa-map fa-fw"style="color:green"></i><a th:href="postpaid"> Plans </a>
+               <!-- <ul class="side-nav-dropdown">
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Prepaid Plans</a></li>
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Postpaid Plans</a></li>
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Dongle Plans</a></li>
+                </ul>-->
+            </li>
+            <li><i class="fa fa-usb fa-fw" style="color:green"></i><a th:href="donglepurchase"> Purchase Dongle</a>
+            </li>
+            <li><i class="fa fa-pencil fa-fw" style="color:green"></i><a th:href="edit"> Edit Profile</a>
+            </li>
+            <li><i class="fa fa-users fa-fw" style="color:green"></i><a th:href="newconnection"> New Connection</a>
+            </li>
+            <li><i class="fa fa-bolt fa-fw" style="color:green"></i><a th:href="index"> Logout</a>
+            </li>
+        </ul>
+    </div>
+</aside>
+<section id="contents">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid"style="background-color:rgb(100,178,77);color:white">
+            <div class="navbar-header ">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <i class="fa fa-align-right"></i>
+                </button>
+                <a class="navbar-brand" th:href="dashboard"style="color:white">My<span class="main-color"style="color:white">Dashboard</span></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="dashboard"><i class="fa fa-user-o fw"></i> My account</a></li>
+                            <li><a href="postpaid"><i class="fa fa-map-o fw"></i> Recommended Plans</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a th:href="index"><i class="fa fa-sign-out"></i> Log out</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i data-show="show-side-navigation1" class="fa fa-bars show-side-btn"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <!-- Navigation Ends-->
+
+
+
+        <!------ Include the above in your HEAD tag ---------->
+<div class="container-fluid" style="background-color: white;margin-top: 8%">
+<div class="well" style="background-color:white">
+    <ul class="nav nav-tabs" >
+        <li class="active"style="background-color:white"><a href="#home" data-toggle="tab">Profile</a></li>
+
+    </ul>
+    <div id="myTabContent" class="tab-content" style="background-color: white">
+        <div class="tab-pane active in" id="home" style="background-color: white" >
+            <form method="post" role="form" th:object="${user}"style="background-color: white" >
+
+             <!--       <label> <div th:text="${user.name}">Name </div></label>-->
+
+
+                    <label style="color:green">Email</label>
+                    <input class="form-control" type="text" height="100%" th:value="${user.email}" th:name="email" th:id="email" th:field="*{email}"/>
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('email')}"
+                      th:errors="*{email}">Enter the correct email format</span>
+                    <label style="color:green">Password</label>
+                    <input class="form-control" type="text" th:value="${user.password}" th:name="password" th:id="password" />
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('password')}"
+                      th:errors="*{password}">AMOUNT</span>
+                    <label style="color:green">Contact number</label>
+                    <input class="form-control" type="text"  th:name="phone" th:id="phone" />
+                    <label style="color:green">Address</label>
+                    <textarea class="form-control" rows="4" cols="50" th:name="address" th:id="address" ></textarea>
+                    <label style="color:green">State</label>
+                    <input class="form-control" type="text"  th:name="state" th:id="state" />
+                    <label style="color:green">Postal Code</label>
+                    <input class="form-control" type="text"  th:name="code" th:id="code" />
+                    <div>
+                        <button class="btn btn-success" onclick="alert('Updated Successfully')">Update</button>
+                    </div>
+            </form>
+        </div>
+    </div></div>
+</div>
+</section>
+    <script src='//code.jquery.com/jquery-latest.js'></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+    <script src='css/main.js'></script>
+</body>
+
+</html>

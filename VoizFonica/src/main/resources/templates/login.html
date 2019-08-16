@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link href='//fonts.googleapis.com/css?family=Lato:400,300,700,100' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id = "container">
+    <div class="login-page">
+        <h1>  VoizFonica</h1><h1>LOGIN PAGE</h1>
+        <div class="form">
+            <form class="login-form" method="post"th:object="${login}">
+                <input type="text" placeholder="Email" th:field="*{email}"/>
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('email')}"
+                      th:errors="*{email}">Name Error</span>
+
+                <input type="password" placeholder="Password" th:field="*{password}"/>
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('password')}"
+                      th:errors="*{password}">Password Error</span>
+
+                <button>login</button>
+                <p class="message">Not yet registered?<p> <a th:href="register" style="color:green">Click here to register with us</th:></a></p>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="content">
+</div>
+<footer id="myFooter">
+    <div class="container">
+    </div>
+    <div class="social-networks">
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+        <a href="#" class="email"><i class="fa fa-envelope-o"></i></a>
+
+    </div>
+
+    <div class="footer-copyright">
+        <p>© 2019 Copyright Voizfonica </p>
+    </div>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

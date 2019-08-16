@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Recharge</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/payrecharge.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/PaymentRecharge.css">
+    <link href='//fonts.googleapis.com/css?family=Lato:400,300,700,100' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <style>
+        .validationError{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Starts-->
+<aside class="side-nav" id="show-side-navigation1"style=" background-color: white" >
+    <div class="vl">
+        <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
+        <div class="heading"style="background-color: rgb(100,178,77);">
+            <img src="images/user.ico" alt="user pic">
+            <div class="info">
+                <h3 style="color: white">Hi,<a th:href="dashboard" >User </a></h3>
+                <p style="color:white">Welcome to your account </p>
+            </div>
+        </div>
+        <ul class="categories">
+            <li><i class="fa fa-home fa-fw" style="color:green" aria-hidden="true"></i><a th:href="dashboard"> My account</a>
+            </li>
+            <li><i class="fa fa-money fa-fw"style="color:green"></i><a th:href="payrecharge"> Payment and Recharge</a>
+            </li>
+            <li><i class="fa fa-map fa-fw"style="color:green"></i><a th:href="postpaid"> Plans </a>
+             <!--   <ul class="side-nav-dropdown">
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Prepaid Plans</a></li>
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Postpaid Plans</a></li>
+                    <li><a th:href="postpaid"style="color:rgba(100,178,77,0.8)">Dongle Plans</a></li>
+                </ul>-->
+            </li>
+            <li><i class="fa fa-usb fa-fw" style="color:green"></i><a th:href="donglepurchase"> Purchase Dongle</a>
+            </li>
+            <li><i class="fa fa-pencil fa-fw" style="color:green"></i><a th:href="edit"> Edit Profile</a>
+            </li>
+            <li><i class="fa fa-users fa-fw" style="color:green"></i><a th:href="newconnection"> New Connection</a>
+            </li>
+            <li><i class="fa fa-bolt fa-fw" style="color:green"></i><a th:href="index"> Logout</a>
+            </li>
+        </ul>
+    </div>
+</aside>
+<section id="contents">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid"style="background-color:rgb(100,178,77);color:white">
+            <div class="navbar-header ">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <i class="fa fa-align-right"></i>
+                </button>
+                <a class="navbar-brand" th:href="dashboard"style="color:white">My<span class="main-color"style="color:white">Dashboard</span></a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a th:href="dashboard"><i class="fa fa-user-o fw"></i> My account</a></li>
+                            <li><a href="postpaid"><i class="fa fa-map-o fw"></i> Recommended Plans</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a th:href="index"><i class="fa fa-sign-out"></i> Log out</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i data-show="show-side-navigation1" class="fa fa-bars show-side-btn"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Ends-->
+
+
+            <div class="container" style="margin-top: 10%;border-width: 0px;background-color: white">
+                <h3 align="center" style="font-weight: bold;color: green"><b>PREPAID RECHARGE</b></h3>
+                <form class="formstyle" th:action="@{/payrecharge}" method="post" th:object="${paymentRecharge}" style="border-color: white" >
+<div style="margin-top: 2%">
+                    <b style="color: green">Mobile Number:</b>
+                    <input  type="text" name="mobileno" placeholder="+91" value="" th:field="*{mobileno}">
+
+                    <span class="validationError"
+                          th:if="${#fields.hasErrors('mobileno')}"
+                          th:errors="*{mobileno}">MOBILE NO</span>
+                     </div>
+<div style="margin-top:2%">
+                    <b style="color:green" >Amount:</b>
+                    <input  type="text" name="plan" placeholder="tariff plan" th:field="*{amount}">
+                  <span class="validationError"
+                          th:if="${#fields.hasErrors('amount')}"
+                          th:errors="*{amount}">AMOUNT</span>
+            </div>
+
+                    <!--<button type="button" id="PayBut" class="btn btn-success btn-lg format2" onclick="myFunction()"> Pay</button>-->
+                    <button type="submit" class="btn btn-success" id="PayBut" style="margin-top:2%">Pay</button>
+</div>
+                </form>
+            </div>
+</section>
+
+
+<script src='//code.jquery.com/jquery-latest.js'></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+<script src='css/main.js'></script>
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="main.js"></script>-->
+</body>
+</html>
