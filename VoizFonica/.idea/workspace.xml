@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="213a78c3-e9e0-4eaa-a9e1-b8668dc15ef3" name="Default Changelist" comment="" />
+    <list default="true" id="213a78c3-e9e0-4eaa-a9e1-b8668dc15ef3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/dashboard1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/dashboard1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/donglepurchase.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/donglepurchase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/newconnection.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/newconnection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/newconnectionresult.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/newconnectionresult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/payrecharge.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/payrecharge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/postpaidplans.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/postpaidplans.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/dongleplan.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/dashboard1.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/dashboard1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/donglepurchase.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/donglepurchase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/newconnection.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/newconnection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/newconnectionresult.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/newconnectionresult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/payrecharge.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/payrecharge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/postpaidplans.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/postpaidplans.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +115,10 @@
       <workItem from="1565909661010" duration="1024000" />
       <workItem from="1565913591946" duration="6784000" />
       <workItem from="1565927561625" duration="840000" />
+      <workItem from="1565929669010" duration="3390000" />
+      <workItem from="1566019201137" duration="164000" />
+      <workItem from="1566061244155" duration="147000" />
+      <workItem from="1566104473140" duration="2984000" />
     </task>
     <servers />
   </component>
